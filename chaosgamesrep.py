@@ -16,12 +16,12 @@ def kmerise(fasta, k, PATH):
     Outputs a tab seperated kmer count file.
 
     Source arguments used in this function:
-    script = the path to this script, used to locate the genKmerCount executable
-    k = kmer size used to digest the fasta file
-    m = maximum kmer count to return kmers
+    k (int) : kmer size used to digest the fasta file
+    m (int) : maximum kmer count to return kmers
+    PATH (string) : the path to the current work directory 
     """
 
-    gKC_exec = "/home/amorris/BioInf/CGR/bin/genKmerCount"
+    gKC_exec = "./bin/genKmerCount"
     ks_outfile = path.join(PATH, f"{path.basename(fasta)}.k{k}")
     gKC_argline = f"{gKC_exec} {fasta} {k} {0} > {ks_outfile}"
 
